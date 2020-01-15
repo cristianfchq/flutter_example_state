@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.green,
-        brightness: Brightness.light,
-        accentColor: Colors.red,
+        brightness: Brightness.dark,
+        accentColor: Colors.yellowAccent,
       ),
       home: HomePage(),
     );
@@ -49,23 +49,6 @@ class _HomePageState extends State<HomePage> {
                 fontSize: 22.0,
               ),
             ),
-            
-            Padding(
-              padding: const EdgeInsets.all(40.0),
-              child: RaisedButton(
-                child: Text(
-                  "click",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
-                ),
-                onPressed: () {
-                  _changeText();
-                },
-                color: Colors.lightBlueAccent,
-              ),
-            ),
           ],
         ),
       ),
@@ -79,6 +62,12 @@ class _HomePageState extends State<HomePage> {
         title: Text("Home Page"),
       ),
       body: _bodyWidget(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed:(){
+          _changeText();
+        },
+      ),
     );
   }
 }
