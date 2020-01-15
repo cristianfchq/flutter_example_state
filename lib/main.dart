@@ -22,14 +22,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
   String mytext = "hello world";
-  
+
   void _changeText() {
     setState(() {
-      if(mytext.startsWith("h")){
+      if (mytext.startsWith("h")) {
         mytext = "welcome to my app";
-      }else{
+      } else {
         mytext = "hello world";
       }
     });
@@ -40,13 +39,30 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.all(8.0),
       child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(mytext),
-            RaisedButton(
-              child: Text("click"),
-              onPressed: () {
-                _changeText();
-              },
+            Text(
+              mytext,
+              style: TextStyle(
+                fontSize: 22.0,
+              ),
+            ),
+            
+            Padding(
+              padding: const EdgeInsets.all(40.0),
+              child: RaisedButton(
+                child: Text(
+                  "click",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                  ),
+                ),
+                onPressed: () {
+                  _changeText();
+                },
+                color: Colors.lightBlueAccent,
+              ),
             ),
           ],
         ),
